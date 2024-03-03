@@ -9,6 +9,8 @@ int main()
 
             geoJson.addLine(-lat,lon,lat,lon);
             geoJson.addLine(lat,lon,lat,-lon);
+            geoJson.addX1(lat,lon);
+            geoJson.addX2(lat,lon);
 
 
 

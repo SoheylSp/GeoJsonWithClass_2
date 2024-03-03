@@ -26,7 +26,51 @@ void GeojsonClass::addLine(int lat1, int lon1, int lat2, int lon2)
     feature["geometry"] = geometry ;
 
     features_.append(feature) ;
+
+
+
+
+
 }
+
+void GeojsonClass::addX1(int lat1, int lon1)
+{
+
+
+
+    QJsonObject feature ;
+    QJsonObject properties ;
+    QJsonObject geometry ;
+    QJsonArray coordinates ;
+
+    feature["type"] = "Feature" ;
+    feature["properties"]=properties ;
+    geometry["type"] = "LineString" ;
+    coordinates.append(QJsonArray({lat1,lon1}));
+    coordinates.append(QJsonArray({lat1 - 2 , lon1-1})) ;
+    geometry["coordinates"]=coordinates;
+    feature["geometry"]=geometry;
+    features_.append(feature) ;
+
+}
+
+void GeojsonClass::addX2(int lat1, int lon1)
+{
+    QJsonObject feature ;
+    QJsonObject properties ;
+    QJsonObject geometry ;
+    QJsonArray coordinates ;
+
+    feature["type"] = "Feature" ;
+    feature["properties"]=properties ;
+    geometry["type"] = "LineString" ;
+    coordinates.append(QJsonArray({-lat1,lon1}));
+    coordinates.append(QJsonArray({-lat1 + 2 , lon1-1})) ;
+    geometry["coordinates"]=coordinates;
+    feature["geometry"]=geometry;
+    features_.append(feature) ;
+}
+
 
 void GeojsonClass::writeToFile()
 {
