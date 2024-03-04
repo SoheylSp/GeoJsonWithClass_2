@@ -6,6 +6,8 @@
 #include <QJsonDocument>
 #include <QFile>
 #include <QDebug>
+#include <QGeoCoordinate>
+
 
 class GeojsonClass
 {
@@ -15,6 +17,9 @@ public:
     void addLine(int lat1 , int lon1 , int lat2 , int lon2);
     void addX1(int lat1 , int lon1 );
     void addX2(int lat1 , int lon1 );
+
+    
+    void addPolygon(QGeoCoordinate coordinate1, QGeoCoordinate coordinate2  , QGeoCoordinate coordinate3 , QGeoCoordinate coordinate4 , QGeoCoordinate coordinate5);
 
 
     void writeToFile ();
