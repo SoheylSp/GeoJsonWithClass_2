@@ -128,7 +128,20 @@ void GeojsonClass::addCircle(const QGeoCoordinate &center, double radius)
     features_.append(feature) ;
 
 
+    
+}
 
+void GeojsonClass::calculateGreatCircle(const QGeoCoordinate &point1, const QGeoCoordinate &point2, int numPoints)
+{
+    
+    for(int i = 0 ; i <numPoints ; ++i){
+        
+        double f = static_cast<double>(i) / numPoints ;
+        QGeoCoordinate intermediatePoint = point1.atDistanceAndAzimuth(point1.distanceTo(point2)* f,point1.azimuthTo(point2));
+        
+        
+    }
+    
 }
 
 

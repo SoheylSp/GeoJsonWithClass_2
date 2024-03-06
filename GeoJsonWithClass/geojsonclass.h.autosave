@@ -24,7 +24,7 @@ public:
 
     void addCircle (const QGeoCoordinate &center , double radius) ;
 
-
+    void calculateGreatCircle(const QGeoCoordinate& point1 , const QGeoCoordinate& point2 , int numPoints) ;
 
 
     void writeToFile ();

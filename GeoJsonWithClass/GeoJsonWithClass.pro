@@ -1,4 +1,5 @@
 QT -= gui
+QT += positioning
 
 CONFIG += c++11 console
 CONFIG -= app_bundle
