@@ -36,7 +36,6 @@ private:
     QJsonObject geojson_;
     QJsonArray features_;
 
-    static const double EarthRadius; // Define Earth's radius as a constant
 
 
 
